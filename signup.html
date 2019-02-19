@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from jc253608.studentweb.jcu.edu.sg/A2/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Feb 2019 15:52:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Signup - Smarter Travel Assistant</title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/icon'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Connecting to database</title>
+</head>
+
+<body>
+</body>
+
+<!-- Mirrored from jc253608.studentweb.jcu.edu.sg/A2/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Feb 2019 15:52:13 GMT -->
+</html>
+<script type="text/javascript">
+function checkform(){
+	errorflag = false;
+	errormsg = "";
+	form = document.signup_form;
+	passwordLength = form.password.value.length;
+	
+	if (form.f_name.value == ""){
+		errorflag = true;
+		errormsg += "Please enter your first name.\n"	
+	}
+	
+	if (form.l_name.value == ""){
+		errorflag = true;
+		errormsg += "Please enter your last name.\n"
+	}
+	
+	for (var i=0; i<2; i++) {
+    	if (form.gender[i].checked)
+	  		var gender_radio = true;
+  	}
+	
+  	if (!gender_radio) {
+	  	errorflag = true;
+     	errormsg +="Please select a gender.\n";
+  	}
+	
+	if (form.email.value == ""){
+		errorflag = true;
+		errormsg += "Please don't leave email blank.\n"	
+	}
+	
+	aliasPosition = form.email.value.indexOf("@");
+	dotPosition = form.email.value.indexOf(".");
+	
+	if ((aliasPosition == -1 || dotPosition == -1) && form.email.value != ""){
+		errorflag = true;
+		errormsg += "Please enter a valid email address.\n";
+	}
+	
+	if (passwordLength < 8){
+		errorflag = true;
+		errormsg += "Password must be more than 8.\n";	
+	}
+	
+	if (form.rpassword.value != form.password.value){
+		errorflag = true;
+		errormsg += "Password does not match.\n";
+	}
+	
+	if (form.dob.value == ""){
+		errorflag = true;
+		errormsg += "Please enter a valid date of birth.\n";	
+	}
+	
+	minDate = new Date(1940,1,1);
+	maxDate = new Date(2014,1,1);
+	inputDate = new Date(form.dob.value);
+	
+	if (inputDate < minDate){
+		errorflag = true;
+		errormsg += "Date of birth cannot be lower than 1940.\n";	
+	}
+	
+	if (inputDate > maxDate){
+		erroflag = true;
+		errormsg += "Date of birth cannot be higher than 2014.\n";	
+	}
+	
+	if (errorflag){
+		alert(errormsg);	
+	}
+	return !errorflag;
+	
+}
+</script>
+</head>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<body style='background-image: url(img/bgss.png); background-position: center;'>
+<div id='formlogo'><img src='img/formlogo.png'></div>
+<div id='register'>
+<h3>Sign Up</h3>
+<hr>
+<form action="#" method="post" class="form" name = "signup_form" onSubmit="javascript:return checkform();">
+<input type='text' name='f_name' class='box' placeholder='First name'>
+<br>
+<input type='text' name='l_name' class='box' placeholder='Last name'>
+<br>
+<input type='text' name='email' class='box' placeholder='Email'>
+<br>
+<input type='password' name='password' class='box' placeholder='Password'>
+<br>
+<input type='password' name='rpassword' class='box' placeholder='Verify Password'>
+<br>
+<br>
+<hr>
+Date of Birth
+<input type='date' name='dob' class='box'>
+<br>
+<br>
+<hr>
+Gender
+<br>
+<input type="radio" name="gender" value="male" id="male" class='radio'> <label for="male">Male</label>
+<input type="radio" name="gender" value="female" id="female" class='radio'> <label for="female">Female</label>
+<br>
+<br>
+<hr>
+Location
+<br>
+<select name="location" class="location">
+<option value="singapore">Singapore</option>
+<option value="others">Others</option>
+</select>
+<br>
+<br>
+<hr>
+Subscription Type
+<br>
+<input type="radio" name="subscription" value="daily" checked="checked" id="daily" class='radio'>
+<label for="daily"><strong>Daily - $27 SGD</strong></label>
+<input type="radio" name="subscription" value="weekly" id="weekly"/>
+<label for="weekly"><strong>Weekly - $169 SGD</strong></label>
+<br>
+<br>
+<hr>
+<input type='submit' name='submit' class='button' value='Sign Up'>
+</form>
+<a href='login.html'>Already have an account?</a>
+<br>
+<a href='index-2.html'>Home</a>
+</div>
+<div class='break'></div>
+</body>
+</html>

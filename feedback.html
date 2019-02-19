@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from jc253608.studentweb.jcu.edu.sg/A2/feedback.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Feb 2019 15:53:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Feedback - Smarter Travel Assistant</title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/icon'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Connecting to fbdatabase</title>
+</head>
+
+<body>
+</body>
+
+<!-- Mirrored from jc253608.studentweb.jcu.edu.sg/A2/feedback.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Feb 2019 15:53:25 GMT -->
+</html><meta http-equiv="Content-Type" content="text/html; charset=utf-8" charset="ISO-8859-1"/><link rel='shortcut icon' href='img/favicon.png' type='image/icon'>
+<script type="text/javascript">
+
+function checkform(){
+	errorflag = false;
+	errormsg = "";
+	form = document.feedback_form;
+	
+	if (form.f_name.value == ""){
+		errorflag = true;
+		errormsg += "please enter your First Name.\n"	
+	}
+	
+	if (form.l_name.value == ""){
+		errorflag = true;
+		errormsg += "please enter your Last Name.\n"
+	}
+	
+	for (var i=0; i<2; i++) {
+    	if (form.gender[i].checked)
+	  		var gender_radio = true;
+  	}
+	
+  	if (!gender_radio) {
+	  	errorflag = true;
+     	errormsg +="Please select a Gender.\n";
+  	}
+	
+	if (form.email.value == ""){
+		errorflag = true;
+		errormsg += "Please don't leave Email blank.\n"	
+	}
+	
+	aliasPosition = form.email.value.indexOf("@");
+	dotPosition = form.email.value.indexOf(".");
+	
+	if ((aliasPosition == -1 || dotPosition == -1) && form.email.value != ""){
+		errorflag = true;
+		errormsg += "Please enter a valid Email Address.\n";
+	}
+	
+	if (form.comments.value == ""){
+		errorflag = true;
+		errormsg += "please write some feedback for us!\n";	
+	}
+	
+	if (errorflag){
+		alert(errormsg);	
+	}
+	return !errorflag;
+	
+}
+</script>
+</head>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<body>
+<div id='menu'>
+    <a href='index-2.html' class='logo'>&nbsp; &nbsp; &nbsp;</a>
+    <navs>
+    <a href='singapore.html'>Singapore</a>    </navs>
+    <member>
+    <a href='login.html'>Login</a><a href='signup.html'>Register</a>    &nbsp;&nbsp;
+    </member>
+</div>
+<div id='submenu'>
+<div id='break'>
+</div>
+<img src='img/headerlogo.png' class='headerlogo'>
+<img src='img/separator.png' class='sep'>
+<a href="login.html" title="Local Guides"><img src='img/busicon.png' class='icon'></a>
+<a href="login.html" title="Hiring Items"><img src='img/itemsicon.png' class='icon item'></a>
+<a href="login.html" title="Mandarin Classes"><img src='img/mandarinicon.png' class='icon mandarin'></a>
+<a href="login.html" title="Transportation service"><img src='img/taxicon.png' class='icon taxi'></a>
+<a href="login.html" title="Phone Help"><img src='img/phoneicon.png' class='icon phone'></a>
+<a href="login.html" title="Translation"><img src='img/transicon.png' class='icon trans'></a></div>
+<div id='container'>
+<div id='break'></div>
+<div id='content'>  
+<center>
+  <h1>Feedback</h1></center>
+<hr>
+<form action="#" method="post" class="form" name="feedback_form" onSubmit="javascript:return checkform();">
+<fieldset class='feedback'>
+  <legend><strong>User Information	:</strong></legend><br />
+<label for="f_name"><strong>Name	:</strong></label><br />
+<input type="text" name="f_name" placeholder="First Name" id="f_name" size="35" /><input type="text" name="l_name" placeholder="Last Name" id="l_name" size="35" /><br /><br /><label for="gender"><strong>Gender	:</strong></label><br />
+<input type="radio" name="gender" value="male" id="male" /><label for="male">
+<strong>Male</strong></label><br />
+<input type="radio" name="gender" value="female" id="female" /><label for="female"><strong> Female</strong></label><br /><br />
+<label for="email"><strong>Email </strong><strong>:</strong></label><br />
+<input type="email" name="email" id="email" size="76" placeholder="email@email.com"/><br /><br /><label for="country"><strong>Location	:</strong></label><br />
+<select name="country" style="width:100px"><option value="singapore">Singapore</option>
+<option value="others">Others</option>
+</select><br /><br />
+<fieldset style="border: 0px solid;"><legend><label for="subscription"><strong>User type	:</strong></label></legend>
+<input type="radio" name="user_type" value="guest" checked="checked" id="guest"/>
+<label for="guest"><strong>Guest</strong><br /></label>
+<input type="radio" name="user_type" value="member" id="member"/>
+<label for="member"><strong>Member</strong></label>
+
+</fieldset>
+<br />
+<label for="feedback"><strong>Please enter your comments about the web site 
+and possible improvements:</strong></label><br /><br />
+<textarea name="comments" cols="65" rows="4" id="feedback"></textarea>
+<br /><br />
+<input type="reset" name="reset" value="Reset" />
+<input type="submit" name="submit" value="Submit" />
+<div class='smallbreak'></div>
+</fieldset>
+</form>
+<br>
+</div>
+</div>
+<div id='footer'>
+<div id='break'></div>
+<a href='index-2.html'>Home</a> &middot; <a href='aboutus.html'>About Us</a> &middot; <a href='contactus.html'>Contact Us</a> &middot; <a href='feedback.html'>Feedback</a>
+<hr>
+<div style='padding-top: 10px;'></div>
+Copyright © 2014 &mdash; Smart Travel Assistant. All rights reserved. <br> All trademarks are property of 'Group 6' &ndash; CP2010.
+<div id='break'></div>
+</div>
+</body>
+</html>

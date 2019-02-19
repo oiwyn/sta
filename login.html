@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from jc253608.studentweb.jcu.edu.sg/A2/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Feb 2019 15:52:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Login - Smarter Travel Assistant</title>
+<link rel='shortcut icon' href='img/favicon.png' type='image/icon'>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Connecting to database</title>
+</head>
+
+<body>
+</body>
+
+<!-- Mirrored from jc253608.studentweb.jcu.edu.sg/A2/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Feb 2019 15:52:06 GMT -->
+</html><script type="text/javascript">
+
+function checkform(){
+	errorflag = false;
+	errormsg = "";
+	form = document.login_form;
+	passwordLength = form.password.value.length;
+	
+	if (form.username.value == ""){
+		errorflag = true;
+		errormsg += "Please don't leave Username blank.\n"	
+	}
+	
+	aliasPosition = form.username.value.indexOf("@");
+	dotPosition = form.username.value.indexOf(".");
+	
+	if ((aliasPosition == -1 || dotPosition == -1) && form.username.value != ""){
+		errorflag = true;
+		errormsg += "Please enter a valid Username Address.\n";
+	}
+	
+	if (passwordLength < 8){
+		errorflag = true;
+		errormsg += "Password must be more than 8.\n";	
+	}
+	
+	if (errorflag){
+		alert(errormsg);	
+	}
+	
+	return !errorflag;
+	
+}
+
+</script>
+</head>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<body style='background-image: url(img/bgss.png)'>
+<div id='formlogo'><img src='img/formlogo.png'></div>
+<div id='login'>
+<h3>Log In</h3>
+<hr>
+<form action="#" method="post" class="form" name="login_form" onSubmit="javascript:return checkform();">
+<input type='text' name='username' class='box' placeholder='Username'>
+<br>
+<input type='password' name='password' class='box' placeholder='Password'>
+<br>
+<input type='submit' name='submit' class='button' value='Log In'>
+</form>
+<a href='signup.html'>Don't have an account?</a>
+<br>
+<a href='index-2.html'>Home</a>
+</div>
+</body>
+</html>
