@@ -1,7 +1,7 @@
 # Smarter Travel Assitant
 This is a preview of a travel agency website that was made during my second university year, 2014.
 
-All the back-end codes/pages which allows register, logging in to the website made for this website are still hosted on our students' web server which you can still access on:
+All the back-end codes/pages which allows registering, logging in to the website made for this website are still hosted on our students' web server which you can still access on:
 http://jc253608.studentweb.jcu.edu.sg/A2/
 - - -
 # Background
