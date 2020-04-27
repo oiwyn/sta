@@ -1,4 +1,4 @@
-# Smarter Travel Assitant
+# Smarter Travel Assistant
 This is a preview/mockup of a travel agency website that was made during my second university year at James Cook University (2014).
 
 ~~All the back-end codes/pages which allow registering and logging in to the website made for this website are still hosted on the university's web server which you can still access on:
